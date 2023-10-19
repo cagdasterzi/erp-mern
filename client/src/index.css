@@ -14,17 +14,25 @@ body {
 }
 
 .container {
-  overflow: hidden;
+  /*overflow: hidden;*/
   background: #cfcfcf;
-  text-align: center;
+  text-align: left;
   border-radius: 15px;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 17px;
   margin-bottom: 17px;
-  align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  align-items: left;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.container h2 {
+  display: inline;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: #333;
+  text-decoration: none;
 }
 
 .container h1 {
@@ -136,8 +144,8 @@ input {
   box-sizing: border-box;
 }
 
-form button {
-  background-color: #0074b8;
+/*form button {
+  background-color: #455766;
   border: none;
   border-radius: 10px;
   color: white;
@@ -149,7 +157,11 @@ form button {
 }
 
 form button:hover {
-  background-color: #004166;
+  background-color: #35434e;
+}*/
+
+form h3 {
+  margin-top: 0px;
 }
 
 div.error {
@@ -168,21 +180,7 @@ input.hata {
 .dropdown {
   float: right;
   overflow: hidden;
-
-  /*border: none;
-  outline: none;*/
   margin-right: 20px;
-}
-
-.material-symbols-outlined {
-  outline: 0px;
-  border: 1px solid #00416600;
-  background: none;
-}
-
-.material-symbols-outlined:hover {
-  border: 1px solid #333;
-  border-radius: 5px;
 }
 
 /* Add a red background color to navbar links on hover */
@@ -231,4 +229,39 @@ input.hata {
   margin-right: 10%;
   border-radius: 10px;
   padding: 20px;
+}
+
+.create button {
+  background-color: #455766;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.create button:hover {
+  background-color: #35434e;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dropdown button {
+  font-size: 1.65rem;
+  border: 1px solid #00416600;
+  background: none;
+}
+
+.dropdown button:hover {
+  border: 1px solid #333;
+  border-radius: 5px;
 }

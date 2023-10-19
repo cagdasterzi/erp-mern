@@ -4,6 +4,7 @@ const Navbar = () => {
     return (
         <header>
             <div className="container">
+                <h2>Müşteri Takip Sistemi</h2>
                 <div className="dropdown">
                     <button className="material-symbols-outlined">
                         menu

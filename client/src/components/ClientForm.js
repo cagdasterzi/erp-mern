@@ -79,7 +79,7 @@ const ClientForm = () => {
                 value={tecrübe}
                 className={emptyFields.includes('tecrübe') ? 'hata' : ''}
             />
-            <button>Ekle</button>
+            <button className="material-symbols-outlined">post_add</button>
         </form>
     )
 };
