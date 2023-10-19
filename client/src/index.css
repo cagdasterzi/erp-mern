@@ -1,29 +1,37 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&family=VT323&display=swap');
 
 /* layout */
 :root {
-  --primary: #1aac83;
+  --primary: #2353ac;
   --error: #e7195a;
 }
 
 body {
-  background: #f1f1f1;
+  background: #333;
   margin: 0;
-  font-family: "Poppins";
+  font-family: "Montserrat";
 }
 
-header {
-  background: #fff;
-}
-
-header .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
+.container {
+  background: #ececec;
+  text-align: center;
+  border-radius: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 17px;
+  margin-bottom: 17px;
   align-items: center;
-  justify-content: space-between;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.container h1 {
+  display: inline;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: #333;
+  text-decoration: none;
 }
 
 header a {
@@ -31,8 +39,78 @@ header a {
   text-decoration: none;
 }
 
-.pages {
-  max-width: 1400px;
+/* homepage */
+.home {
+  display: grid;
+  gap: 100px;
+}
+
+.client-details {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 17px;
+  background: #ececec;
+  border-radius: 20px;
+  /*margin: 20px auto;*/
   padding: 20px;
-  margin: 0 auto;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.client-details h2 {
+  margin: 0 0 10px 0;
+  font-weight: 400;
+  font-size: 1.4em;
+  color: var(--primary);
+}
+
+.client-details p {
+  margin: 0;
+  font-size: 1em;
+  color: #555;
+}
+
+.client-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+
+.client-details #edit {
+  background-color: #409443;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.client-details #edit:hover {
+  background-color: #245025;
+  color: white;
+}
+
+.client-details #delete {
+  background-color: #c51919;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.client-details #delete:hover {
+  background-color: #7e1111;
+  color: white;
 }

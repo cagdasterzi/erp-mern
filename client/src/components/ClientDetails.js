@@ -6,7 +6,8 @@ const ClientDetails = ({ client }) => {
             <p><strong>Teminat Tutarı: </strong>{client.teminat}</p>
             <p><strong>Tecrübe: </strong>{client.tecrübe}</p>
             <p>{client.createdAt}</p>
-            <hr />
+            <button id="edit">Düzenle</button>
+            <button id="delete">Sil</button>
         </div>
     )
 };
