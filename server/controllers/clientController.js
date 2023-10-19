@@ -32,7 +32,7 @@ const createClient = async (req, res) => {
         const client = await Client.create({ isim, teklif, teminat, tecrübe });
         res.status(200).json(client);
     } catch (error) {
-        res.status(400).json({ hata: error.message });
+        res.status(400).json({ hata: error.name + ": Gerekli alanları doldurduğunuza emin olun." });
     }
 };
 
@@ -61,7 +61,7 @@ const updateClient = async (req, res) => {
         return res.status(404).json({ hata: "Bu ID'ye sahip müşteri bulunamadı." });
     }
 
-    const client = await Client.findOneAndUpdate({_id: id}, {
+    const client = await Client.findOneAndUpdate({ _id: id }, {
         ...req.body
     })
 

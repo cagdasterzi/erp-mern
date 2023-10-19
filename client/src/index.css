@@ -92,11 +92,11 @@ header a {
   font-size: 16px;
   margin-right: 10px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .client-details #edit:hover {
   background-color: #245025;
-  color: white;
 }
 
 .client-details #delete {
@@ -108,9 +108,50 @@ header a {
   text-align: center;
   display: inline-block;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .client-details #delete:hover {
   background-color: #7e1111;
+}
+
+/* new workout form */
+label,
+input {
+  display: block;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: #0074b8;
+  border: none;
+  border-radius: 10px;
   color: white;
+  padding: 12px 24px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #004166;
+}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
 }

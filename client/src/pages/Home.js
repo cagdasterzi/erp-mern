@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 // components
 import ClientDetails from '../components/ClientDetails';
+import ClientForm from '../components/ClientForm';
 
 const Home = () => {
     const [clients, setClients] = useState(null);
@@ -26,6 +27,7 @@ const Home = () => {
                     <ClientDetails key={client._id} client={client} />
                 ))}
             </div>
+            <ClientForm />
         </div>
     )
 };
