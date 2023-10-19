@@ -28,11 +28,29 @@ const getClient = async (req, res) => {
 const createClient = async (req, res) => {
     const { isim, teklif, teminat, tecrübe } = req.body;
 
+    let emptyFields = [];
+
+    if (!isim) {
+        emptyFields.push('isim');
+    }
+    if (!teklif) {
+        emptyFields.push('teklif');
+    }
+    if (!teminat) {
+        emptyFields.push('teminat');
+    }
+    if (!tecrübe) {
+        emptyFields.push('tecrübe');
+    }
+    if (emptyFields.length > 0) {
+        return res.status(400).json({ hata: "Lütfen gerekli alanları doldurun.", emptyFields })
+    }
+
     try {
         const client = await Client.create({ isim, teklif, teminat, tecrübe });
         res.status(200).json(client);
     } catch (error) {
-        res.status(400).json({ hata: error.name + ": Gerekli alanları doldurduğunuza emin olun." });
+        res.status(400).json({ hata: error.message });
     }
 };
 

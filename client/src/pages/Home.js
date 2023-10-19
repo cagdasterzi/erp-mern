@@ -3,23 +3,22 @@ import { useClientsContext } from '../hooks/useClientsContext';
 
 // components
 import ClientDetails from '../components/ClientDetails';
-import ClientForm from '../components/ClientForm';
 
 const Home = () => {
-    const {clients, dispatch} = useClientsContext();
-    
+    const { clients, dispatch } = useClientsContext();
+
     useEffect(() => {
         const fetchClients = async () => {
             const response = await fetch('/api/clients');
             const json = await response.json();
 
             if (response.ok) {
-                dispatch({type: 'SET_CLIENTS', payload: json})
+                dispatch({ type: 'SET_CLIENTS', payload: json });
             }
         };
 
         fetchClients();
-    }, []);
+    }, [dispatch]); // dependency
 
     return (
         <div className="home">
@@ -28,7 +27,6 @@ const Home = () => {
                     <ClientDetails key={client._id} client={client} />
                 ))}
             </div>
-            <ClientForm />
         </div>
     )
 };

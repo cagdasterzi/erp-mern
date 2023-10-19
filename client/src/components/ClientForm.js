@@ -9,6 +9,7 @@ const ClientForm = () => {
     const [teminat, setTeminat] = useState('');
     const [tecrübe, setTecrube] = useState('');
     const [hata, setError] = useState(null);
+    const [emptyFields, setEmptyFields] = useState([])
 
 
     const handleSubmit = async (e) => {
@@ -28,10 +29,12 @@ const ClientForm = () => {
 
         if (!response.ok) {
             setError(json.hata);
+            setEmptyFields(json.emptyFields);
         }
 
         if (response.ok) {
             setError(null);
+            setEmptyFields([]);
             setisim('');
             setTeklif('');
             setTeminat('');
@@ -50,6 +53,7 @@ const ClientForm = () => {
                 type="text"
                 onChange={(e) => setisim(e.target.value)}
                 value={isim}
+                className={emptyFields.includes('isim') ? 'hata' : ''}
             />
 
             <label>Teklif Tutarı</label>
@@ -57,6 +61,7 @@ const ClientForm = () => {
                 type="number"
                 onChange={(e) => setTeklif(e.target.value)}
                 value={teklif}
+                className={emptyFields.includes('teklif') ? 'hata' : ''}
             />
 
             <label>Teminat Tutarı</label>
@@ -64,6 +69,7 @@ const ClientForm = () => {
                 type="number"
                 onChange={(e) => setTeminat(e.target.value)}
                 value={teminat}
+                className={emptyFields.includes('teminat') ? 'hata' : ''}
             />
 
             <label>Tecrübe</label>
@@ -71,6 +77,7 @@ const ClientForm = () => {
                 type="number"
                 onChange={(e) => setTecrube(e.target.value)}
                 value={tecrübe}
+                className={emptyFields.includes('tecrübe') ? 'hata' : ''}
             />
             <button>Ekle</button>
         </form>

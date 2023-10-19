@@ -4,9 +4,21 @@ const Navbar = () => {
     return (
         <header>
             <div className="container">
-                <Link to="/">
-                    <h1>Ana Sayfa</h1>
-                </Link>
+                <div className="dropdown">
+                    <button className="material-symbols-outlined">
+                        menu
+                    </button>
+
+                    <div className="dropdown-content">
+                        <Link to="/">
+                            <p>Ana Sayfa</p>
+                        </Link>
+
+                        <Link to="/NewClient">
+                            <p>Yeni Müşteri</p>
+                        </Link>
+                    </div>
+                </div>
             </div>
         </header>
     )
