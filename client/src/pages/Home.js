@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+// components
+import ClientDetails from '../components/ClientDetails';
+
 const Home = () => {
     const [clients, setClients] = useState(null);
 
@@ -20,7 +23,7 @@ const Home = () => {
         <div className="home">
             <div className="clients">
                 {clients && clients.map((client) => (
-                    <p key={client._id}>{client.isim}</p>
+                    <ClientDetails key={client._id} client={client} />
                 ))}
             </div>
         </div>
