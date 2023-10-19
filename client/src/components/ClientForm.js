@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useClientsContext } from '../hooks/useClientsContext';
 
 const ClientForm = () => {
+    const { dispatch } = useClientsContext();
+
     const [isim, setisim] = useState('');
     const [teklif, setTeklif] = useState('');
     const [teminat, setTeminat] = useState('');
@@ -34,6 +37,7 @@ const ClientForm = () => {
             setTeminat('');
             setTecrube('');
             console.log('Yeni müşteri eklendi:', json);
+            dispatch({type: 'CREATE_CLIENT', payload: json});
         }
     }
 

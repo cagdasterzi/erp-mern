@@ -1,19 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useClientsContext } from '../hooks/useClientsContext';
 
 // components
 import ClientDetails from '../components/ClientDetails';
 import ClientForm from '../components/ClientForm';
 
 const Home = () => {
-    const [clients, setClients] = useState(null);
-
+    const {clients, dispatch} = useClientsContext();
+    
     useEffect(() => {
         const fetchClients = async () => {
             const response = await fetch('/api/clients');
             const json = await response.json();
 
             if (response.ok) {
-                setClients(json);
+                dispatch({type: 'SET_CLIENTS', payload: json})
             }
         };
 

@@ -27,7 +27,7 @@ export const ClientContextProvider = ({ children }) => {
     //    dispatch({type: 'SET_CLIENTS', payload: [{}, {}]});
 
     return (
-        <ClientsContext.Provider value={{ state, dispatch }}>
+        <ClientsContext.Provider value={{ ...state, dispatch }}>
             {children}
         </ClientsContext.Provider>
     )
