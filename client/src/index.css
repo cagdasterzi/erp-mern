@@ -128,7 +128,7 @@ header a {
   background-color: #a46060;
 }
 
-/* new workout form */
+/* new client form */
 label,
 input {
   display: block;
@@ -140,8 +140,9 @@ input {
   margin-bottom: 20px;
   width: 100%;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 10px;
   box-sizing: border-box;
+  border-bottom: 3px solid #455766;
 }
 
 /*form button {
@@ -264,4 +265,59 @@ input.hata {
 .dropdown button:hover {
   border: 1px solid #333;
   border-radius: 5px;
+}
+
+/*Modal*/
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.btn-modal {
+  padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px;
+}
+
+.modal, .overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position:fixed;
+  z-index: 1;
+}
+
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 10px;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 10px;
+  background-color: #c46060;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.close-model:hover{
+  background-color: #a46060;
 }

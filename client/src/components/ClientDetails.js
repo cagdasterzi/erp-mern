@@ -2,6 +2,9 @@ import { useClientsContext } from '../hooks/useClientsContext';
 // date-fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { tr } from 'date-fns/esm/locale'
+import { useState } from 'react';
+import ClientEdit from './ClientEdit';
+
 
 const ClientDetails = ({ client }) => {
     const { dispatch } = useClientsContext();
@@ -16,6 +19,24 @@ const ClientDetails = ({ client }) => {
         if (response.ok) {
             dispatch({ type: 'DELETE_CLIENT', payload: json });
         }
+    };
+    
+    const handleEdit = async () => {
+        const response = await fetch('/api/clients/' + client._id, {
+            method: 'PATCH'
+        });
+
+        const json = await response.json();
+
+        if (response.ok) {
+            dispatch({ type: 'SET_CLIENT', payload: json });
+        }
+    };
+
+    const [modal, setModal] = useState(false);
+
+    const toggleModal = () => {
+        setModal(!modal)
     }
 
     return (
@@ -25,7 +46,16 @@ const ClientDetails = ({ client }) => {
             <p><strong>Teminat Tutarı: </strong>{client.teminat}</p>
             <p><strong>Tecrübe: </strong>{client.tecrübe}</p>
             <p>{formatDistanceToNow(new Date(client.createdAt), { addSuffix: true, locale: tr})}</p>
-            <button className="material-symbols-outlined" id="edit">Edit</button>
+            <button className="material-symbols-outlined" id="edit" onClick={toggleModal}>Edit</button>
+            {modal && (
+                <div className="modal">
+                    <div className="overlay" onClick={toggleModal}></div>
+                    <div className="modal-content">
+                        <ClientEdit/>
+                        <button className="close-modal" onClick={toggleModal}>X</button>
+                    </div>
+                </div>           
+            )}
             <button className="material-symbols-outlined" id="delete" onClick={handleClick}>Delete</button>
         </div>
     )

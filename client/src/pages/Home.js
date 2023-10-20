@@ -3,6 +3,7 @@ import { useClientsContext } from '../hooks/useClientsContext';
 
 // components
 import ClientDetails from '../components/ClientDetails';
+import ClientEdit from '../components/ClientEdit';
 
 const Home = () => {
     const { clients, dispatch } = useClientsContext();
