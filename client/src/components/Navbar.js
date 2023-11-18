@@ -4,7 +4,7 @@ const Navbar = () => {
     return (
         <header>
             <div className="container">
-                <h2>Müşteri Takip Sistemi</h2>
+                <h2>Firma Takip Sistemi</h2>
                 <div className="dropdown">
                     <button className="material-symbols-outlined">
                         menu
@@ -16,7 +16,7 @@ const Navbar = () => {
                         </Link>
 
                         <Link to="/NewClient">
-                            <p>Yeni Müşteri</p>
+                            <p>Yeni Firma Ekle</p>
                         </Link>
                     </div>
                 </div>

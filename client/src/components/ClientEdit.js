@@ -39,20 +39,20 @@ const ClientEdit = () => {
             setTeklif('');
             setTeminat('');
             setTecrube('');
-            console.log('Yeni müşteri eklendi:', json);
-            dispatch({type: 'CREATE_CLIENT', payload: json});
+            console.log('Firma Güncellendi:', json);
+            dispatch({type: 'CHANGE_CLIENT', payload: json});
         }
     }
 
     return (
         <form className="create" onSubmit={handleSubmit}>
-            <h3>Müşteriyi Düzenle</h3>
+            <h3>Firmayı Düzenle</h3>
             {hata && <div className="error">{hata}</div>}
-            <label>Müşteri İsmi</label>
+            <label>Firma İsmi</label>
             <input
+                value={isim}
                 type="text"
                 onChange={(e) => setisim(e.target.value)}
-                value={isim}
                 className={emptyFields.includes('isim') ? 'hata' : ''}
             />
 
@@ -72,7 +72,7 @@ const ClientEdit = () => {
                 className={emptyFields.includes('teminat') ? 'hata' : ''}
             />
 
-            <label>Tecrübe</label>
+            <label>İş Deneyim Tutarı</label>
             <input
                 type="number"
                 onChange={(e) => setTecrube(e.target.value)}

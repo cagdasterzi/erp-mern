@@ -44,7 +44,7 @@ const ClientDetails = ({ client }) => {
             <h2>{client.isim}</h2>
             <p><strong>Teklif Tutarı: </strong>{client.teklif}</p>
             <p><strong>Teminat Tutarı: </strong>{client.teminat}</p>
-            <p><strong>Tecrübe: </strong>{client.tecrübe}</p>
+            <p><strong>İş Deneyim Tutarı: </strong>{client.tecrübe}</p>
             <p>{formatDistanceToNow(new Date(client.createdAt), { addSuffix: true, locale: tr})}</p>
             <button className="material-symbols-outlined" id="edit" onClick={toggleModal}>Edit</button>
             {modal && (

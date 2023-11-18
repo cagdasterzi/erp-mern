@@ -46,9 +46,9 @@ const ClientForm = () => {
 
     return (
         <form className="create" onSubmit={handleSubmit}>
-            <h3>Yeni Müşteri</h3>
+            <h3>Yeni Firma</h3>
             {hata && <div className="error">{hata}</div>}
-            <label>Müşteri İsmi</label>
+            <label>Firma İsmi</label>
             <input
                 type="text"
                 onChange={(e) => setisim(e.target.value)}
@@ -72,7 +72,7 @@ const ClientForm = () => {
                 className={emptyFields.includes('teminat') ? 'hata' : ''}
             />
 
-            <label>Tecrübe</label>
+            <label>İş Deneyim Tutarı</label>
             <input
                 type="number"
                 onChange={(e) => setTecrube(e.target.value)}
